@@ -1,11 +1,21 @@
 import React from "react";
 
-export default function Item() {
-  const name: string = "item";
-  const slots: number = 1;
-  const cost: number = 1;
-  const acBonus: number = 0;
-  const quality: number = 0;
+interface ItemProps {
+  item: {
+    name: string;
+    slots: number;
+    cost: number;
+    acBonus: number;
+    quality: number;
+  };
+}
+
+const Item: React.FC<ItemProps> = ({ item }) => {
+  const name = item.name;
+  const slots = item.slots;
+  const cost = item.cost;
+  const acBonus = item.acBonus;
+  const quality = item.quality;
 
   return (
     <div>
@@ -16,4 +26,6 @@ export default function Item() {
       {quality > 0 && <div>quality: {quality}</div>}
     </div>
   );
-}
+};
+
+export default Item;
