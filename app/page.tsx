@@ -1,5 +1,6 @@
 "use client";
 
+import Inventory from "@/components/inventory";
 import { ChangeEvent, useState } from "react";
 
 export default function Home() {
@@ -97,6 +98,8 @@ export default function Home() {
       <p>Charisma Defense: {10 + cha}</p>
 
       <button onClick={(e) => setStats()}>Roll Stats</button>
+
+      <Inventory></Inventory>
     </div>
   );
 }
