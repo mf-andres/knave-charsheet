@@ -37,67 +37,77 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <h1>Character Stats</h1>
-      <form>
-        <label>Strength: </label>
-        <input
-          type="number"
-          value={str}
-          onChange={(e) => handleInputChange(e, setStr)}
-        />
-        <br />
+    <div className="flex">
+      <div>
+        <div className="flex-col bg-gray-300">
+          <h1>Character Stats</h1>
+          <form>
+            <label>Strength: </label>
+            <input
+              type="number"
+              value={str}
+              onChange={(e) => handleInputChange(e, setStr)}
+            />
+            <br />
 
-        <label>Dexterity: </label>
-        <input
-          type="number"
-          value={dex}
-          onChange={(e) => handleInputChange(e, setDex)}
-        />
-        <br />
+            <label>Dexterity: </label>
+            <input
+              type="number"
+              value={dex}
+              onChange={(e) => handleInputChange(e, setDex)}
+            />
+            <br />
 
-        <label>Constitution: </label>
-        <input
-          type="number"
-          value={con}
-          onChange={(e) => handleInputChange(e, setCon)}
-        />
-        <br />
+            <label>Constitution: </label>
+            <input
+              type="number"
+              value={con}
+              onChange={(e) => handleInputChange(e, setCon)}
+            />
+            <br />
 
-        <label>Intelligence: </label>
-        <input
-          type="number"
-          value={int}
-          onChange={(e) => handleInputChange(e, setInt)}
-        />
-        <br />
+            <label>Intelligence: </label>
+            <input
+              type="number"
+              value={int}
+              onChange={(e) => handleInputChange(e, setInt)}
+            />
+            <br />
 
-        <label>Wisdom: </label>
-        <input
-          type="number"
-          value={wis}
-          onChange={(e) => handleInputChange(e, setWis)}
-        />
-        <br />
+            <label>Wisdom: </label>
+            <input
+              type="number"
+              value={wis}
+              onChange={(e) => handleInputChange(e, setWis)}
+            />
+            <br />
 
-        <label>Charisma: </label>
-        <input
-          type="number"
-          value={cha}
-          onChange={(e) => handleInputChange(e, setCha)}
-        />
-        <br />
-      </form>
+            <label>Charisma: </label>
+            <input
+              type="number"
+              value={cha}
+              onChange={(e) => handleInputChange(e, setCha)}
+            />
+            <br />
+          </form>
+        </div>
 
-      <h2>Calculated Stats</h2>
-      <p>Strength Defense: {10 + str}</p>
-      <p>Dexterity Defense: {10 + dex}</p>
-      <p>Constitution Defense: {10 + con}</p>
-      <p>Intelligence Defense: {10 + int}</p>
-      <p>Wisdom Defense: {10 + wis}</p>
-      <p>Charisma Defense: {10 + cha}</p>
+        <br></br>
 
-      <button onClick={(e) => setStats()}>Roll Stats</button>
+        <div className="flex-col">
+          <h2>Calculated Stats</h2>
+          <p>Strength Defense: {10 + str}</p>
+          <p>Dexterity Defense: {10 + dex}</p>
+          <p>Constitution Defense: {10 + con}</p>
+          <p>Intelligence Defense: {10 + int}</p>
+          <p>Wisdom Defense: {10 + wis}</p>
+          <p>Charisma Defense: {10 + cha}</p>
+
+          <button className="bg-blue-300" onClick={(e) => setStats()}>
+            Roll Stats
+          </button>
+        </div>
+      </div>
 
       <Inventory></Inventory>
     </div>
