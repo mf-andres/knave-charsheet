@@ -51,7 +51,7 @@ export default function Home() {
       {/* TODO refactor level xp, hp and ac are similar looking input */}
       <div className="col-start-7 col-span-1 row-start-1 row-span-1">
         <div className="flex items-center m-1">
-          <div className="p-2">Level: </div>
+          <div className="p-2 w-14">Level: </div>
           <input
             type="text"
             className="w-16 m-2 p-2 text-yellow-900 rounded"
@@ -61,7 +61,7 @@ export default function Home() {
 
       <div className="col-start-8 col-span-1 row-start-1 row-span-1">
         <div className="flex items-center m-1">
-          <div className="p-2 m-1">XP: </div>
+          <div className="p-2 m-1 w-14">XP: </div>
           <input
             type="text"
             className="w-16 m-2 p-2 text-yellow-900 rounded"
@@ -71,7 +71,7 @@ export default function Home() {
 
       <div className="col-start-7 col-span-1 row-start-2 row-span-1">
         <div className="flex items-center m-1">
-          <div className="p-2">HP: </div>
+          <div className="p-2 w-14">HP: </div>
           <input
             type="text"
             className="w-16 m-2 p-2 text-yellow-900 rounded"
@@ -81,7 +81,7 @@ export default function Home() {
 
       <div className="col-start-8 col-span-1 row-start-2 row-span-1">
         <div className="flex items-center m-1">
-          <div className="p-2">AC: </div>
+          <div className="p-2 m-1 w-14">AC: </div>
           <input
             type="text"
             className="w-16 m-2 p-2 text-yellow-900 rounded"
