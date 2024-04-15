@@ -36,7 +36,7 @@ export default function Home() {
         <Traits></Traits>
       </div>
 
-      <div className="col-start-2 row-start-4">
+      <div className="col-start-2 col-span-2 row-start-4">
         <Inventory></Inventory>
       </div>
     </div>

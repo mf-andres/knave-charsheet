@@ -33,13 +33,16 @@ export default function Inventory() {
 
   return (
     <div>
-      <div>
+      <div className="grid grid-cols-4 grid-rows-5 place-items-start border-2 m-2 border-yellow-950 rounded shadow">
         {items.map((item, index) => (
           <Item key={index} item={item}></Item>
         ))}
       </div>
       <div>
-        <button className="bg-blue-300" onClick={toggleOverlay}>
+        <button
+          className="m-2 p-1 bg-yellow-950 text-yellow-100 rounded-md"
+          onClick={toggleOverlay}
+        >
           Add Item
         </button>
       </div>
