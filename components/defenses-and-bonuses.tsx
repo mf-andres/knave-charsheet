@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from "react";
 import DefenseAndBonus from "./defense-and-bonus";
+import Ac from "./ac";
 
 export default function DefensesAndBonuses() {
   const [str, setStr] = useState(0);
@@ -28,7 +29,7 @@ export default function DefensesAndBonuses() {
 
   return (
     <div>
-      <div className="grid grid-cols-6 grid-rows-1 place-items-center">
+      <div className="grid grid-cols-7 grid-rows-1 place-items-center">
         <DefenseAndBonus
           stat={str}
           statSetter={setStr}
@@ -64,6 +65,8 @@ export default function DefensesAndBonuses() {
           statSetter={setChar}
           statName="CHAR"
         ></DefenseAndBonus>
+
+        <Ac></Ac>
       </div>
       <div>
         <button

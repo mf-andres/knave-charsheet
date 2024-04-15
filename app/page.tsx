@@ -6,7 +6,6 @@ import Traits from "@/components/traits";
 import Inventory from "@/components/inventory";
 import HpInput from "@/components/hp";
 import LevelAndXP from "@/components/level-and-xp";
-import Ac from "@/components/ac";
 
 export default function Home() {
   return (
@@ -22,10 +21,6 @@ export default function Home() {
 
       <div className="col-start-1 row-start-2">
         <HpInput></HpInput>
-      </div>
-
-      <div className="col-start 2 row-start-2">
-        <Ac></Ac>
       </div>
 
       <div className="col-start-1 col-span-2 row-start-3">
