@@ -8,6 +8,10 @@ import HpInput from "@/components/hp";
 import LevelAndXP from "@/components/level-and-xp";
 
 export default function Home() {
+  // TODO, complete overlay form, complete add item feat,
+  //  get taken slots, edit item fields, make shareable, roll hp
+  //  level up
+
   return (
     <div className="grid grid-cols-3 grid-flow-row gap-1 bg-yellow-200">
       <div className="col-start-1 col-span-2 row-start-1">
