@@ -33,7 +33,7 @@ export default function Inventory() {
 
   return (
     <div>
-      <div className="grid grid-cols-4 grid-rows-5 place-items-start border-2 m-2 border-yellow-950 rounded shadow">
+      <div className="grid grid-cols-4 place-items-start border-2 m-2 border-yellow-950 rounded shadow">
         {items.map((item, index) => (
           <Item key={index} item={item}></Item>
         ))}
