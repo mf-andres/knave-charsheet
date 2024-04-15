@@ -2,6 +2,7 @@
 
 import DefensesAndBonuses from "@/components/defenses-and-bonuses";
 import Inventory from "@/components/inventory";
+import Traits from "@/components/traits";
 
 export default function Home() {
   return (
@@ -69,7 +70,7 @@ export default function Home() {
       </div>
 
       <div className="col-start-1 col-span-4 row-start-3 row-span-1">
-        Traits
+        <Traits></Traits>
       </div>
     </div>
   );
