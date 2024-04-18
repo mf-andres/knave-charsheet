@@ -16,18 +16,18 @@ export default function Home() {
   const [con, setCon] = useState(0);
   const [items, setItems] = useState([
     {
-      name: "item1",
+      name: "Rations (1 day)",
       slots: 1,
-      cost: 1,
+      cost: 5,
       acBonus: 0,
       quality: 0,
     },
     {
-      name: "armor1",
+      name: "Rations (1 day)",
       slots: 1,
-      cost: 1,
-      acBonus: 1,
-      quality: 1,
+      cost: 5,
+      acBonus: 0,
+      quality: 0,
     },
   ]);
   const state = { state: "state" };
