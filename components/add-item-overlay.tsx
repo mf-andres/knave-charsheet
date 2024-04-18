@@ -19,7 +19,7 @@ const AddItemOverlay: React.FC<AddItemOverlayProps> = ({
     e: ChangeEvent<HTMLInputElement>,
     setter: Function
   ) => {
-    const newValue = e.target.value;
+    const newValue = parseInt(e.target.value);
     setter(newValue);
   };
 
@@ -44,7 +44,7 @@ const AddItemOverlay: React.FC<AddItemOverlayProps> = ({
               type="text"
               className="text-yellow-900 rounded text-base px-4"
               value={name}
-              onChange={(e) => handleInputChange(e, setName)}
+              onChange={(e) => setName(e.target.value)}
             />
 
             <label className="m-2 text-yellow-100">Cost:</label>

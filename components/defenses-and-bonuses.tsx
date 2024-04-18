@@ -1,18 +1,21 @@
 import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
 import DefenseAndBonus from "./defense-and-bonus";
 import Ac from "./ac";
+import { ItemDO } from "./models/item";
 
 interface Props {
   con: number;
   setCon: Dispatch<SetStateAction<number>>;
+  items: ItemDO[];
 }
 
-const DefensesAndBonuses: React.FC<Props> = ({ con, setCon }) => {
+const DefensesAndBonuses: React.FC<Props> = ({ con, setCon, items }) => {
   const [str, setStr] = useState(0);
   const [dex, setDex] = useState(0);
   const [int, setInt] = useState(0);
   const [wis, setWis] = useState(0);
   const [char, setChar] = useState(0);
+  const [ac, setAc] = useState(0);
 
   const setStats = () => {
     setStr(rollStat());
@@ -70,7 +73,7 @@ const DefensesAndBonuses: React.FC<Props> = ({ con, setCon }) => {
           statName="CHAR"
         ></DefenseAndBonus>
 
-        <Ac></Ac>
+        <Ac ac={ac} setAc={setAc} items={items}></Ac>
       </div>
       <div>
         <button

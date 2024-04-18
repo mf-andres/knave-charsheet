@@ -10,9 +10,25 @@ import { useState } from "react";
 
 export default function Home() {
   // TODO
-  //  edit item fields, make shareable, roll hp
+  //  ace, make shareable, roll hp
   //  level up
   const [con, setCon] = useState(0);
+  const [items, setItems] = useState([
+    {
+      name: "item1",
+      slots: 1,
+      cost: 1,
+      acBonus: 0,
+      quality: 0,
+    },
+    {
+      name: "armor1",
+      slots: 1,
+      cost: 1,
+      acBonus: 1,
+      quality: 1,
+    },
+  ]);
 
   return (
     <div className="grid grid-cols-3 grid-flow-row gap-1 bg-yellow-200">
@@ -20,7 +36,6 @@ export default function Home() {
         <NameInput></NameInput>
       </div>
 
-      {/* TODO refactor level xp, hp and ac are similar looking input */}
       <div className="col-start-3 row-start-1">
         <LevelAndXP></LevelAndXP>
       </div>
@@ -30,7 +45,11 @@ export default function Home() {
       </div>
 
       <div className="col-start-1 col-span-2 row-start-3">
-        <DefensesAndBonuses con={con} setCon={setCon}></DefensesAndBonuses>
+        <DefensesAndBonuses
+          con={con}
+          setCon={setCon}
+          items={items}
+        ></DefensesAndBonuses>
       </div>
 
       <div className="col-start-1 row-start-4">
@@ -38,7 +57,7 @@ export default function Home() {
       </div>
 
       <div className="col-start-2 col-span-2 row-start-4">
-        <Inventory con={con}></Inventory>
+        <Inventory con={con} items={items} setItems={setItems}></Inventory>
       </div>
     </div>
   );

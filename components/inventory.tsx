@@ -1,29 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import Item from "./item";
 import AddItemOverlay from "./add-item-overlay";
+import { ItemDO } from "./models/item";
 
 interface Props {
   con: number;
+  items: ItemDO[];
+  setItems: Dispatch<SetStateAction<ItemDO[]>>;
 }
 
-const Inventory: React.FC<Props> = ({ con }) => {
-  const [items, setItems] = useState([
-    {
-      name: "item1",
-      slots: 1,
-      cost: 1,
-      acBonus: 0,
-      quality: 0,
-    },
-    {
-      name: "armor1",
-      slots: 1,
-      cost: 1,
-      acBonus: 1,
-      quality: 1,
-    },
-  ]);
-
+const Inventory: React.FC<Props> = ({ con, items, setItems }) => {
   const getTakenSlots = () => {
     return items.map((item) => item.slots).reduce((sum, slots) => sum + slots);
   };
