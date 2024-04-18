@@ -33,18 +33,18 @@ export default function Traits() {
   };
 
   const rollTraits = () => {
-    const rollD10 = () => Math.floor(Math.random() * 10) + 1;
+    const rollD20 = () => Math.floor(Math.random() * 20) + 1;
     const randomizedTraits = {
-      physique: physiqueValues[rollD10()],
-      face: faceValues[rollD10()],
-      skin: skinValues[rollD10()],
-      hair: hairValues[rollD10()],
-      clothing: clothingValues[rollD10()],
-      virtue: virtueValues[rollD10()],
-      vice: viceValues[rollD10()],
-      speech: speechValues[rollD10()],
-      background: backgroundValues[rollD10()],
-      misfortune: misfortuneValues[rollD10()],
+      physique: physiqueValues[rollD20()],
+      face: faceValues[rollD20()],
+      skin: skinValues[rollD20()],
+      hair: hairValues[rollD20()],
+      clothing: clothingValues[rollD20()],
+      virtue: virtueValues[rollD20()],
+      vice: viceValues[rollD20()],
+      speech: speechValues[rollD20()],
+      background: backgroundValues[rollD20()],
+      misfortune: misfortuneValues[rollD20()],
     };
     setTraits(randomizedTraits);
   };
