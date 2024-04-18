@@ -9,8 +9,8 @@ import LevelAndXP from "@/components/level-and-xp";
 import { useState } from "react";
 
 export default function Home() {
-  // TODO complete add item feat,
-  //  get taken slots, edit item fields, make shareable, roll hp
+  // TODO
+  //  edit item fields, make shareable, roll hp
   //  level up
   const [con, setCon] = useState(0);
 

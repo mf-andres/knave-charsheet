@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 interface ItemProps {
   item: {
@@ -11,7 +11,7 @@ interface ItemProps {
 }
 
 const Item: React.FC<ItemProps> = ({ item }) => {
-  const name = item.name;
+  const [name, setName] = useState(item.name);
   const slots = item.slots;
   const cost = item.cost;
   const acBonus = item.acBonus;
@@ -19,8 +19,15 @@ const Item: React.FC<ItemProps> = ({ item }) => {
 
   return (
     <div className="w-56 h-36 m-2 border-2 border-yellow-950 rounded">
-      <div className="p-2 bg-yellow-950 text-yellow-100 text-xl rounded-sm">
-        {name}
+      <div className="grid justify-center p-2 bg-yellow-950 text-yellow-100 text-xl rounded-sm">
+        <input
+          type="text"
+          className=" text-yellow-950 rounded px-2 w-48"
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+        />
       </div>
       <div className="grid grid-cols-2">
         <div>
