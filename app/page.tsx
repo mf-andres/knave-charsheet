@@ -7,6 +7,7 @@ import Inventory from "@/components/inventory";
 import HpInput from "@/components/hp";
 import LevelAndXP from "@/components/level-and-xp";
 import { useState } from "react";
+import DownloadButton from "@/components/download-button";
 
 export default function Home() {
   // TODO
@@ -29,6 +30,7 @@ export default function Home() {
       quality: 1,
     },
   ]);
+  const state = { state: "state" };
 
   return (
     <div className="grid grid-cols-3 grid-flow-row gap-1 bg-yellow-200">
@@ -37,7 +39,10 @@ export default function Home() {
       </div>
 
       <div className="col-start-3 row-start-1">
-        <LevelAndXP></LevelAndXP>
+        <div className="flex justify-around justify-items-center items-center">
+          <LevelAndXP></LevelAndXP>
+          <DownloadButton state={state}></DownloadButton>
+        </div>
       </div>
 
       <div className="col-start-1 row-start-2">
