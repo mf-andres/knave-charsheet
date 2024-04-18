@@ -24,12 +24,16 @@ const Item: React.FC<ItemProps> = ({ item }) => {
       </div>
       <div className="grid grid-cols-2">
         <div>
-          <div className="p-2">slots: {slots}</div>
-          <div className="p-2">cost: {cost}</div>
+          <div className="p-2">
+            {slots} Slot{"s" ? slots > 1 : ""}
+          </div>
+          <div className="p-2">
+            {cost} Coin{"s" ? cost > 1 : ""}
+          </div>
         </div>
         <div>
-          {acBonus > 0 && <div className="p-2">ac bonus: {acBonus}</div>}
-          {quality > 0 && <div className="p-2">quality: {quality}</div>}
+          {acBonus > 0 && <div className="p-2">+{acBonus} AC</div>}
+          {quality > 0 && <div className="p-2">{quality} Quality</div>}
         </div>
       </div>
     </div>
