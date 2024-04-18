@@ -1,11 +1,15 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
 import DefenseAndBonus from "./defense-and-bonus";
 import Ac from "./ac";
 
-export default function DefensesAndBonuses() {
+interface Props {
+  con: number;
+  setCon: Dispatch<SetStateAction<number>>;
+}
+
+const DefensesAndBonuses: React.FC<Props> = ({ con, setCon }) => {
   const [str, setStr] = useState(0);
   const [dex, setDex] = useState(0);
-  const [con, setCon] = useState(0);
   const [int, setInt] = useState(0);
   const [wis, setWis] = useState(0);
   const [char, setChar] = useState(0);
@@ -78,4 +82,5 @@ export default function DefensesAndBonuses() {
       </div>
     </div>
   );
-}
+};
+export default DefensesAndBonuses;

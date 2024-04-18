@@ -9,7 +9,7 @@ const AddItemOverlay: React.FC<AddItemOverlayProps> = ({
   onClose,
   onSubmit,
 }) => {
-  const [name, setName] = useState("");
+  const [name, setName] = useState(" ");
   const [slots, setSlots] = useState(1);
   const [cost, setCost] = useState(1);
   const [acBonus, setAcBonus] = useState(1);

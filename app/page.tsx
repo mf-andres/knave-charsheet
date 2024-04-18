@@ -6,11 +6,13 @@ import Traits from "@/components/traits";
 import Inventory from "@/components/inventory";
 import HpInput from "@/components/hp";
 import LevelAndXP from "@/components/level-and-xp";
+import { useState } from "react";
 
 export default function Home() {
-  // TODO, complete overlay form, complete add item feat,
+  // TODO complete add item feat,
   //  get taken slots, edit item fields, make shareable, roll hp
   //  level up
+  const [con, setCon] = useState(0);
 
   return (
     <div className="grid grid-cols-3 grid-flow-row gap-1 bg-yellow-200">
@@ -28,7 +30,7 @@ export default function Home() {
       </div>
 
       <div className="col-start-1 col-span-2 row-start-3">
-        <DefensesAndBonuses></DefensesAndBonuses>
+        <DefensesAndBonuses con={con} setCon={setCon}></DefensesAndBonuses>
       </div>
 
       <div className="col-start-1 row-start-4">
@@ -36,7 +38,7 @@ export default function Home() {
       </div>
 
       <div className="col-start-2 col-span-2 row-start-4">
-        <Inventory></Inventory>
+        <Inventory con={con}></Inventory>
       </div>
     </div>
   );
