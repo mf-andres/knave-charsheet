@@ -11,6 +11,9 @@ interface Props {
 
 const Inventory: React.FC<Props> = ({ con, items, setItems }) => {
   const getTakenSlots = (items: ItemDO[]) => {
+    if (items.length === 0) {
+      return 0;
+    }
     return items.map((item) => item.slots).reduce((sum, slots) => sum + slots);
   };
 
