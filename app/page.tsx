@@ -8,11 +8,11 @@ import HpInput from "@/components/hp";
 import LevelAndXP from "@/components/level-and-xp";
 import { useState } from "react";
 import DownloadButton from "@/components/download-button";
+import UploadButton from "@/components/upload-button";
 
 export default function Home() {
   // TODO
-  //  ace, make shareable, roll hp
-  //  level up
+  //  delete items, make shareable
   const [con, setCon] = useState(0);
   const [items, setItems] = useState([
     {
@@ -42,6 +42,7 @@ export default function Home() {
         <div className="flex justify-around justify-items-center items-center">
           <LevelAndXP></LevelAndXP>
           <DownloadButton state={state}></DownloadButton>
+          <UploadButton></UploadButton>
         </div>
       </div>
 
