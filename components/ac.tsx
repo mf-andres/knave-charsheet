@@ -9,6 +9,10 @@ interface Props {
 
 const Ac: React.FC<Props> = ({ ac, setAc, items }) => {
   useEffect(() => {
+    if (items.length === 0) {
+      setAc(0);
+      return;
+    }
     const totalAcBonus = items
       .map((item) => {
         return item.acBonus;
