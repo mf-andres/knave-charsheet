@@ -9,13 +9,15 @@ import LevelAndXP from "@/components/level-and-xp";
 import { useState } from "react";
 import DownloadButton from "@/components/download-button";
 import UploadButton from "@/components/upload-button";
+import { ItemDO } from "@/components/models/item";
 
 export default function Home() {
   // TODO
   //  delete items, make shareable
   const [con, setCon] = useState(0);
-  const [items, setItems] = useState([
+  const [items, setItems] = useState<ItemDO[]>([
     {
+      id: "1",
       name: "Rations (1 day)",
       slots: 1,
       cost: 5,
@@ -23,6 +25,7 @@ export default function Home() {
       quality: 0,
     },
     {
+      id: "2",
       name: "Rations (1 day)",
       slots: 1,
       cost: 5,

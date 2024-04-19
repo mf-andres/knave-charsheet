@@ -26,6 +26,7 @@ const AddItemOverlay: React.FC<AddItemOverlayProps> = ({
   const handleSubmit = (e: any) => {
     e.preventDefault();
     onSubmit({
+      id: crypto.randomUUID(),
       name: name,
       slots: slots,
       cost: cost,

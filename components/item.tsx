@@ -1,17 +1,15 @@
 import React, { useState } from "react";
+import RemoveButton from "./remove-button";
+import { ItemDO } from "./models/item";
 
 interface ItemProps {
-  item: {
-    name: string;
-    slots: number;
-    cost: number;
-    acBonus: number;
-    quality: number;
-  };
+  item: ItemDO;
+  renameItem: (itemId: string, newName: string) => void;
+  popItem: (itemId: string) => void;
 }
 
-const Item: React.FC<ItemProps> = ({ item }) => {
-  const [name, setName] = useState(item.name);
+const Item: React.FC<ItemProps> = ({ item, renameItem, popItem }) => {
+  const name = item.name;
   const slots = item.slots;
   const cost = item.cost;
   const acBonus = item.acBonus;
@@ -19,15 +17,16 @@ const Item: React.FC<ItemProps> = ({ item }) => {
 
   return (
     <div className="w-56 h-36 m-2 border-2 border-yellow-950 rounded">
-      <div className="grid justify-center p-2 bg-yellow-950 text-yellow-100 text-xl rounded-sm">
+      <div className="flex justify-start p-2 bg-yellow-950 text-yellow-100 text-xl rounded-sm">
         <input
           type="text"
-          className=" text-yellow-950 rounded px-2 w-48"
+          className=" text-yellow-950 rounded px-2 w-40"
           value={name}
           onChange={(e) => {
-            setName(e.target.value);
+            renameItem(item.id, e.target.value);
           }}
         />
+        <RemoveButton onClick={() => popItem(item.id)}></RemoveButton>
       </div>
       <div className="grid grid-cols-2">
         <div>

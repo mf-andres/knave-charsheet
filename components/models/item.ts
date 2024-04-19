@@ -1,4 +1,5 @@
 export interface ItemDO {
+  id: string;
   name: string;
   slots: number;
   cost: number;
