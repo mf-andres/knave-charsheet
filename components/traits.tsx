@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import { physiqueValues } from "./trait-values/physique-values";
 import { faceValues } from "./trait-values/face-values";
 import { skinValues } from "./trait-values/skin-values";
@@ -11,7 +11,38 @@ import { backgroundValues } from "./trait-values/background-values";
 import { misfortuneValues } from "./trait-values/misfortune-values";
 import TraitSelect from "./trait-select";
 
-export default function Traits() {
+interface Props {
+  traitsState: [
+    {
+      physique: string;
+      face: string;
+      skin: string;
+      hair: string;
+      clothing: string;
+      virtue: string;
+      vice: string;
+      speech: string;
+      background: string;
+      misfortune: string;
+    },
+    Dispatch<
+      SetStateAction<{
+        physique: string;
+        face: string;
+        skin: string;
+        hair: string;
+        clothing: string;
+        virtue: string;
+        vice: string;
+        speech: string;
+        background: string;
+        misfortune: string;
+      }>
+    >
+  ];
+}
+
+const Traits: React.FC<Props> = ({ traitsState }) => {
   const [traits, setTraits] = useState({
     physique: physiqueValues[0],
     face: faceValues[0],
@@ -129,4 +160,5 @@ export default function Traits() {
       </button>
     </div>
   );
-}
+};
+export default Traits;

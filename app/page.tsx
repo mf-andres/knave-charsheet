@@ -10,6 +10,16 @@ import { useState } from "react";
 import DownloadButton from "@/components/download-button";
 import UploadButton from "@/components/upload-button";
 import { ItemDO } from "@/components/models/item";
+import { physiqueValues } from "@/components/trait-values/physique-values";
+import { faceValues } from "@/components/trait-values/face-values";
+import { skinValues } from "@/components/trait-values/skin-values";
+import { hairValues } from "@/components/trait-values/hair-values";
+import { clothingValues } from "@/components/trait-values/clothing-values";
+import { virtueValues } from "@/components/trait-values/virtue-values";
+import { viceValues } from "@/components/trait-values/vice-values";
+import { speechValues } from "@/components/trait-values/speech-values";
+import { backgroundValues } from "@/components/trait-values/background-values";
+import { misfortuneValues } from "@/components/trait-values/misfortune-values";
 
 export default function Home() {
   // TODO
@@ -44,6 +54,18 @@ export default function Home() {
       quality: 0,
     },
   ]);
+  const [traits, setTraits] = useState({
+    physique: physiqueValues[0],
+    face: faceValues[0],
+    skin: skinValues[0],
+    hair: hairValues[0],
+    clothing: clothingValues[0],
+    virtue: virtueValues[0],
+    vice: viceValues[0],
+    speech: speechValues[0],
+    background: backgroundValues[0],
+    misfortune: misfortuneValues[0],
+  });
   const state = {
     state: "state",
     charName,
@@ -58,6 +80,8 @@ export default function Home() {
     wis,
     char,
     ac,
+    traits,
+    items,
   };
 
   return (
@@ -97,7 +121,7 @@ export default function Home() {
       </div>
 
       <div className="col-start-1 row-start-4">
-        <Traits></Traits>
+        <Traits traitsState={[traits, setTraits]}></Traits>
       </div>
 
       <div className="col-start-2 col-span-2 row-start-4">
