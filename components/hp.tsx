@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 
-interface Props {}
+interface Props {
+  maxHpState: [number, Dispatch<SetStateAction<number>>];
+  hpState: [number, Dispatch<SetStateAction<number>>];
+}
 
-const HpInput: React.FC<Props> = () => {
-  const [maxHp, setMaxHp] = useState(0);
-  const [hp, setHp] = useState(0);
+const HpInput: React.FC<Props> = ({ maxHpState, hpState }) => {
+  const [maxHp, setMaxHp] = maxHpState;
+  const [hp, setHp] = hpState;
   const rollHp = () => {
     const rollD8 = () => Math.floor(Math.random() * 8) + 1;
     const newMaxHp = rollD8();

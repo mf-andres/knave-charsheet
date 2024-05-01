@@ -1,21 +1,36 @@
-import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import DefenseAndBonus from "./defense-and-bonus";
 import Ac from "./ac";
 import { ItemDO } from "./models/item";
 
 interface Props {
-  con: number;
-  setCon: Dispatch<SetStateAction<number>>;
+  conState: [number, Dispatch<SetStateAction<number>>];
+  strState: [number, Dispatch<SetStateAction<number>>];
+  dexState: [number, Dispatch<SetStateAction<number>>];
+  intState: [number, Dispatch<SetStateAction<number>>];
+  wisState: [number, Dispatch<SetStateAction<number>>];
+  charState: [number, Dispatch<SetStateAction<number>>];
+  acState: [number, Dispatch<SetStateAction<number>>];
   items: ItemDO[];
 }
 
-const DefensesAndBonuses: React.FC<Props> = ({ con, setCon, items }) => {
-  const [str, setStr] = useState(0);
-  const [dex, setDex] = useState(0);
-  const [int, setInt] = useState(0);
-  const [wis, setWis] = useState(0);
-  const [char, setChar] = useState(0);
-  const [ac, setAc] = useState(0);
+const DefensesAndBonuses: React.FC<Props> = ({
+  conState,
+  strState,
+  dexState,
+  intState,
+  wisState,
+  charState,
+  acState,
+  items,
+}) => {
+  const [con, setCon] = conState;
+  const [str, setStr] = strState;
+  const [dex, setDex] = dexState;
+  const [int, setInt] = intState;
+  const [wis, setWis] = wisState;
+  const [char, setChar] = charState;
+  const [ac, setAc] = acState;
 
   const setStats = () => {
     setStr(rollStat());

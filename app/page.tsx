@@ -17,7 +17,15 @@ export default function Home() {
   const [charName, setCharName] = useState("");
   const [level, setLevel] = useState(0);
   const [xp, setXp] = useState(0);
+  const [maxHp, setMaxHp] = useState(0);
+  const [hp, setHp] = useState(0);
   const [con, setCon] = useState(0);
+  const [str, setStr] = useState(0);
+  const [dex, setDex] = useState(0);
+  const [int, setInt] = useState(0);
+  const [wis, setWis] = useState(0);
+  const [char, setChar] = useState(0);
+  const [ac, setAc] = useState(0);
   const [items, setItems] = useState<ItemDO[]>([
     {
       id: "1",
@@ -36,7 +44,21 @@ export default function Home() {
       quality: 0,
     },
   ]);
-  const state = { state: "state", charName, level, xp };
+  const state = {
+    state: "state",
+    charName,
+    level,
+    xp,
+    maxHp,
+    hp,
+    str,
+    dex,
+    con,
+    int,
+    wis,
+    char,
+    ac,
+  };
 
   return (
     <div className="grid grid-cols-3 grid-flow-row gap-1 bg-yellow-200">
@@ -58,13 +80,18 @@ export default function Home() {
       </div>
 
       <div className="col-start-1 row-start-2">
-        <HpInput></HpInput>
+        <HpInput maxHpState={[maxHp, setMaxHp]} hpState={[hp, setHp]}></HpInput>
       </div>
 
       <div className="col-start-1 col-span-2 row-start-3">
         <DefensesAndBonuses
-          con={con}
-          setCon={setCon}
+          conState={[con, setCon]}
+          strState={[str, setStr]}
+          dexState={[dex, setDex]}
+          intState={[int, setInt]}
+          wisState={[wis, setWis]}
+          charState={[char, setChar]}
+          acState={[ac, setAc]}
           items={items}
         ></DefensesAndBonuses>
       </div>
