@@ -83,6 +83,22 @@ export default function Home() {
     traits,
     items,
   };
+  const setState = [
+    setCharName,
+    setLevel,
+    setXp,
+    setMaxHp,
+    setHp,
+    setCon,
+    setStr,
+    setDex,
+    setInt,
+    setWis,
+    setChar,
+    setAc,
+    setTraits,
+    setItems,
+  ];
 
   return (
     <div className="grid grid-cols-3 grid-flow-row gap-1 bg-yellow-200">
@@ -99,7 +115,7 @@ export default function Home() {
             setXp={setXp}
           ></LevelAndXP>
           <DownloadButton state={state}></DownloadButton>
-          <UploadButton></UploadButton>
+          <UploadButton setState={setState}></UploadButton>
         </div>
       </div>
 

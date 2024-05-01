@@ -1,9 +1,26 @@
 import { ChangeEvent, useRef, useState } from "react";
 
-interface Props {}
+interface Props {
+  setState: any;
+}
 
-const UploadButton: React.FC<Props> = () => {
-  const [jsonData, setJsonData] = useState(null);
+const UploadButton: React.FC<Props> = ({ setState }) => {
+  const [
+    setCharName,
+    setLevel,
+    setXp,
+    setMaxHp,
+    setHp,
+    setCon,
+    setStr,
+    setDex,
+    setInt,
+    setWis,
+    setChar,
+    setAc,
+    setTraits,
+    setItems,
+  ] = setState;
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleClick = () => {
@@ -22,7 +39,7 @@ const UploadButton: React.FC<Props> = () => {
       if (!e.target) return;
       try {
         const data = JSON.parse(e.target.result as string);
-        setJsonData(data);
+        setData(data);
       } catch (error) {
         // TODO deal with errors
         console.error("Error parsing JSON file:", error);
@@ -30,6 +47,23 @@ const UploadButton: React.FC<Props> = () => {
     };
 
     reader.readAsText(file);
+  };
+
+  const setData = (data: any) => {
+    setCharName(data.charName);
+    setLevel(data.level);
+    setXp(data.xp);
+    setMaxHp(data.maxHp);
+    setHp(data.hp);
+    setCon(data.con);
+    setStr(data.str);
+    setDex(data.dex);
+    setInt(data.int);
+    setWis(data.wis);
+    setChar(data.char);
+    setAc(data.ac);
+    setTraits(data.traits);
+    setItems(data.items);
   };
 
   return (
