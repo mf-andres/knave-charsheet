@@ -14,6 +14,7 @@ import { ItemDO } from "@/components/models/item";
 export default function Home() {
   // TODO
   //  delete items, make shareable
+  const [charName, setCharName] = useState("");
   const [con, setCon] = useState(0);
   const [items, setItems] = useState<ItemDO[]>([
     {
@@ -33,12 +34,12 @@ export default function Home() {
       quality: 0,
     },
   ]);
-  const state = { state: "state" };
+  const state = { state: "state", charName: charName };
 
   return (
     <div className="grid grid-cols-3 grid-flow-row gap-1 bg-yellow-200">
       <div className="col-start-1 col-span-2 row-start-1">
-        <NameInput></NameInput>
+        <NameInput charName={charName} setCharName={setCharName}></NameInput>
       </div>
 
       <div className="col-start-3 row-start-1">
