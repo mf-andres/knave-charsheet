@@ -15,6 +15,8 @@ export default function Home() {
   // TODO
   //  delete items, make shareable
   const [charName, setCharName] = useState("");
+  const [level, setLevel] = useState(0);
+  const [xp, setXp] = useState(0);
   const [con, setCon] = useState(0);
   const [items, setItems] = useState<ItemDO[]>([
     {
@@ -34,7 +36,7 @@ export default function Home() {
       quality: 0,
     },
   ]);
-  const state = { state: "state", charName: charName };
+  const state = { state: "state", charName, level, xp };
 
   return (
     <div className="grid grid-cols-3 grid-flow-row gap-1 bg-yellow-200">
@@ -44,7 +46,12 @@ export default function Home() {
 
       <div className="col-start-3 row-start-1">
         <div className="flex justify-around justify-items-center items-center">
-          <LevelAndXP></LevelAndXP>
+          <LevelAndXP
+            level={level}
+            setLevel={setLevel}
+            xp={xp}
+            setXp={setXp}
+          ></LevelAndXP>
           <DownloadButton state={state}></DownloadButton>
           <UploadButton></UploadButton>
         </div>
